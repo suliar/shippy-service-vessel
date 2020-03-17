@@ -64,7 +64,12 @@ func main() {
 	repo := &VesselRepository{vessels:
 		vessels}
 
-	port := ":8080"
+	port := ":50052"
+
+	//conn, err := grpc.Dial(port, grpc.WithInsecure())
+	//if err != nil {
+	//	log.Fatalf("Did not connect: %v", err)
+	//}
 	// Set-up our gRPC server.
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
